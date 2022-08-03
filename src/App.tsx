@@ -1,26 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import Routing from './router/Routes';
+import ScrollToTop from './components/ScrollToTop';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
-function App() {
+const App = () => {
+  useEffect(() => {
+    AOS.init()
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='shane_tm_all_wrap'>
+      <ScrollToTop />
+      <Routing />
     </div>
-  );
+  )
 }
 
 export default App;
